@@ -1,0 +1,161 @@
+/* ==========================================================
+   KRG design tokens and base styles
+   ========================================================== */
+
+:root {
+  /* Brand colors */
+  --navy-950: #08111f;
+  --navy-900: #0f1b2d;
+  --navy-800: #16253b;
+  --navy-700: #22344f;
+  --bronze-300: #d8bf96;
+  --bronze-400: #c4a374;
+  --bronze-500: #a98552;
+  --bronze-700: #7a5c33; /* bronze for text on light backgrounds */
+
+  /* Neutrals */
+  --white: #ffffff;
+  --stone-50: #f7f5f1;
+  --stone-100: #efebe4;
+  --line: #e1dbd0;
+  --line-dark: rgba(255, 255, 255, 0.14);
+  --ink: #111a28;
+  --ink-soft: #3b4556;
+  --ink-muted: #5a6475;
+  --on-dark: #e9edf3;
+  --on-dark-muted: #aab4c3;
+
+  /* Status */
+  --success: #1f6b45;
+  --success-bg: #e8f3ec;
+  --warning: #7a5410;
+  --warning-bg: #fbf2df;
+  --error: #a3261f;
+  --error-bg: #fbeceb;
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Archivo", "Inter", system-ui, sans-serif;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: clamp(1.15rem, 1.05rem + 0.4vw, 1.3rem);
+  --h3: 1.125rem;
+  --h2: clamp(1.85rem, 1.4rem + 1.9vw, 2.75rem);
+  --h1: clamp(2.35rem, 1.6rem + 3.4vw, 4.25rem);
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --section-y: clamp(4rem, 3rem + 5vw, 7.5rem);
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 2rem);
+  --container: 1200px;
+
+  /* Surfaces */
+  --radius: 2px;
+  --shadow-sm: 0 1px 2px rgba(15, 27, 45, 0.06);
+  --shadow-md: 0 10px 30px -12px rgba(15, 27, 45, 0.22);
+  --header-h: 76px;
+  --ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-h) + 8px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.65;
+  color: var(--ink-soft);
+  background: var(--white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+figure {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--bronze-500);
+  outline-offset: 3px;
+}
+
+main:focus {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
